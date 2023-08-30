@@ -159,7 +159,7 @@ class Block(Object):
 class Fire(Object):
     ANIMATION_DELAY = 3
 
-    def __init__(self, x, y width, height):
+    def __init__(self, x, y, width, height):
         super().__init__(x, y, width, height, "fire")
         self.fire = load_sprite_sheets("Traps", "Fire", width, height)
         self.image = self.fire["off"][0]
@@ -173,7 +173,7 @@ class Fire(Object):
     def off(self):
         self.animation_name = "off"
 
-    def loop():
+    def loop(self):
         sprites = self.fire[self.animation_name]
         sprite_index = (self.animation_count //
                          self.ANIMATION_DELAY) % len(sprites)
